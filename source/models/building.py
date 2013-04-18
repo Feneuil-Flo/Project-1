@@ -2,6 +2,7 @@
 
 import pygame
 import globals
+import math
 from . import projectile
 from helper.loaders import load_image
 
@@ -51,7 +52,7 @@ class Tour(Building):
         
     def shoot(self, angle):
         
-        globals.balles.add(projectile.Balle(self.rect.centerx, self.rect.centery, angle))
+        globals.balles.add(projectile.Balle(self.rect.centerx+30*math.cos(angle), self.rect.centery-30*math.sin(angle), angle))
         
         
         
